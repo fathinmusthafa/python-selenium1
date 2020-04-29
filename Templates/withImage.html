@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block body %}
+{% for x in area %}
+
+{{ x.find('div','bt-product-catalog-item__image')|safe }}
+Name = <a href="{{ x.find('img')['href']|safe }}">{{x.find('img')['alt']}} </a> <br/>
+Price = {{ x.find('div','col-sm-3 bt-product-catalog-item__price').find('span', 'bt-product-catalog-item__price-normal')|safe }} <br/>
+
+{% endfor %}
+{% endblock %}
